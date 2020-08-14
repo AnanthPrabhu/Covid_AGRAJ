@@ -9,8 +9,8 @@ st.title('COVID AGRAJ Project - COVID Predictor')
 
 def user_input_features():
         gender = st.sidebar.selectbox("Select Gender",("Male", "Female"))
-        age = st.sidebar.selectbox("Select Age group",("0-20", "21-40", "41-60", "61-100"))
-        race = st.sidebar.selectbox("Select your Race",("White", "Black", "Asian", "LatinX", "Others"))
+        age = st.sidebar.selectbox("Select Age group",("0-14", "15-24", "25-34", "35-44", "45-54", "55-64", "65-74", "75-84", "Over 84"))
+        race = st.sidebar.selectbox("Select your Race",("White", "Black", "Asian", "LatinX", "American Indian/Alaskan Native", "Others"))
         state = st.sidebar.selectbox("Select your state",("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colarado", "Connecticut","Delaware","Florida", "Georgia","Hawaii",
             "Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada",
             "New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota",
@@ -31,7 +31,7 @@ def user_input_features():
                 'NPI3': NPI3}
         features = pd.DataFrame (data,index=[0])
         return features
-        
+
 input_df = user_input_features()
 
 st.sidebar.text ("")
