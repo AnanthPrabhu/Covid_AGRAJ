@@ -1,9 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn import datasets
-from PIL import Image
 
 st.title('COVID AGRAJ Project - COVID Predictor')
 
@@ -43,14 +41,6 @@ st.sidebar.text ("")
 
 st.sidebar.button('Submit')
 
-#image = Image.open('sunrise.jpg')
-#st.Image (image, caption ='Your risk of Covid', use_column_width = True)
-
-
-#st.header("Image of Guage")
-#filename = "Gauge.png"
-#data = si.get_images().get(filename)
-#st.image(data, caption=filename, output_format="PNG")
 st.text ("")
 st.text ("")
 st.text ("")
