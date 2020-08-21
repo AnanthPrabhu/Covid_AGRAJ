@@ -9,9 +9,10 @@ import custom_gauge as cg
 image = Image.open('COVID_Agraj_image.jpg')
 st.image (image, caption='A COVID-19 Mortality Risk Predictor', use_column_width=True)
 
-#st.sidebar.text ("Select your inputs")
+st.sidebar.header ("Select your inputs")
+#st.sidebar.subheader ("Select your inputs")
 
-#st.sidebar.text ("")
+st.sidebar.text ("")
 #st.sidebar.text ("")
 
 gender = st.sidebar.selectbox("Select Gender",("Male", "Female"))
@@ -24,14 +25,14 @@ state = st.sidebar.selectbox("Select your state",("Alabama", "Alaska", "Arizona"
 st.sidebar.text ("")
 st.sidebar.text ("")
 
-st.sidebar.text ("Do you do the following:")
+st.sidebar.text ("Does your state do the following:")
 NPI1 = st.sidebar.checkbox ("Practice social distancing?")
 NPI2 = st.sidebar.checkbox ("Mandatory Mask-wearing in public spaces?")
-NPI3 = st.sidebar.checkbox ("Wash hands frequently?")
-NPI4 = st.sidebar.checkbox ("In lockdown(Only leaving home for mandatory trips)?")
-#NPI5 = st.sidebar.checkbox ("Non-essential business closures?")
-#NPI6 = st.sidebar.checkbox ("Stay at home orders (with exemptions)?")
-#NPI7 = st.sidebar.checkbox ("Measures to isolate symptomatic individuals and their contacts?")
+NPI3 = st.sidebar.checkbox ("School closures?")
+NPI4 = st.sidebar.checkbox ("Mass gathering restrictions?")
+NPI5 = st.sidebar.checkbox ("Non-essential business closures?")
+NPI6 = st.sidebar.checkbox ("Stay at home orders (with exemptions)?")
+NPI7 = st.sidebar.checkbox ("Measures to isolate symptomatic individuals and their contacts?")
 
 st.sidebar.text ("")
 st.sidebar.text ("")
@@ -44,10 +45,10 @@ def user_input_features():
                 'NPI1': NPI1,
                 'NPI2': NPI2,
                 'NPI3': NPI3,
-                'NPI4': NPI4}
-                #'NPI5': NPI5,
-                #'NPI6': NPI6,
-                #'NPI7': NPI7}
+                'NPI4': NPI4,
+                'NPI5': NPI5,
+                'NPI6': NPI6,
+                'NPI7': NPI7}
         features = pd.DataFrame (data,index=[0])
         return features
 
@@ -105,7 +106,7 @@ output_df4 = output_age()
 
 def output_NPI():
         data = None
-        if NPI1 == 1 & NPI2 == 1 & NPI3 == 1 & NPI4 == 1:
+        if NPI1 == 1 & NPI2 == 1 & NPI3 == 1 & NPI4 == 1 & NPI5 == 1 & NPI6 == 1 & NPI7 == 1:
             data = 0.18
         else:
             data = 1
