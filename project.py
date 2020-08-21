@@ -93,7 +93,7 @@ def output_NPI():
         if NPI1 == 1:
             data = 0.18
         else:
-            data = 0.82
+            data = 1
         b = data
         return b
 output_df5 = output_NPI()
@@ -205,7 +205,7 @@ def output_state():
 output_df6 = output_state()
 
 def aggregate_calc():
-    data = ((output_df1+output_df2+output_df4+output_df6)*output_df5)
+    data = (((output_df1+output_df2+output_df4+output_df6)/4)*output_df5)
     z = data
     return z
 output_df3 = aggregate_calc()
