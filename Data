@@ -1,2 +1,6 @@
 COVID ActNow Data can be found here:
 https://blog.covidactnow.org/export-covid-act-now-data-spreadsheet/
+
+
+Location data:
+csv_url = "https://covidtracking.com/api/v1/states/"+state+"/daily.csv"
